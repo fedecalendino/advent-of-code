@@ -19,8 +19,17 @@ def part_02(values: list[str]) -> int:
     return sum(sorted(calories_per_elf(values), reverse=True)[:3])
 
 
-test_values = list(map(str.strip, open("test.txt").readlines()))
-input_values = list(map(str.strip, open("input.txt").readlines()))
+def parser(name):
+    return list(
+        map(
+            str.strip,
+            open(f"{name}.txt").readlines(),
+        )
+    )
+
+
+test_values = parser("test")
+input_values = parser("input")
 
 
 assert part_01(test_values) == 24000

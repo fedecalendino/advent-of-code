@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "advent-of-code"
+version = "2022"
+description = "Advent of Code is an Advent calendar of small programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language you like."
+license = "MIT"
+readme = "README.md"
+authors = [
+    "Fede Calendino <fede@calendino.com>"
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.10.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
