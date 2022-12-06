@@ -34,7 +34,6 @@ assert part_01(test_05_values) == 11
 assert part_01(input_values) == 1198
 print("part_01 =", part_01(input_values))
 
-
 assert part_02(test_01_values) == 19
 assert part_02(test_02_values) == 23
 assert part_02(test_03_values) == 23
