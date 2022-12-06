@@ -55,12 +55,13 @@ def part_02(values: list[tuple[int, int]]) -> int:
 
 
 def parser(name):
-    return list(
-        map(
-            lambda line: line.strip().split(" "),
-            open(f"{name}.txt").readlines(),
+    with open(f"{name}.txt") as file:
+        return list(
+            map(
+                lambda line: line.strip().split(" "),
+                file.readlines(),
+            )
         )
-    )
 
 
 test_values = parser("test")
