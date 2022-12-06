@@ -20,12 +20,13 @@ def part_02(values: list[str]) -> int:
 
 
 def parser(name):
-    return list(
-        map(
-            str.strip,
-            open(f"{name}.txt").readlines(),
+    with open(f"{name}.txt") as file:
+        return list(
+            map(
+                str.strip,
+                file.readlines()
+            )
         )
-    )
 
 
 test_values = parser("test")
