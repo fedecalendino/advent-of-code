@@ -26,19 +26,20 @@ def part_02(assignments: list[tuple, tuple]) -> int:
 
 
 def parser(name):
-    for line in open(f"{name}.txt").readlines():
-        first, second = line.strip().split(",")
+    with open(f"{name}.txt") as file:
+        for line in file.readlines():
+            first, second = line.strip().split(",")
 
-        first = tuple(map(int, first.split("-")))
-        second = tuple(map(int, second.split("-")))
-        assert len(first) == len(second) == 2
+            first = tuple(map(int, first.split("-")))
+            second = tuple(map(int, second.split("-")))
+            assert len(first) == len(second) == 2
 
-        first_start, first_end = first
-        second_start, second_end = second
-        assert first_start <= first_end
-        assert second_start <= second_end
+            first_start, first_end = first
+            second_start, second_end = second
+            assert first_start <= first_end
+            assert second_start <= second_end
 
-        yield (first_start, first_end), (second_start, second_end)
+            yield (first_start, first_end), (second_start, second_end)
 
 
 test_values = list(parser("test"))
